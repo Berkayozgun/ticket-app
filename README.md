@@ -6,17 +6,17 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://i.ibb.co/S3Tstzm/Register-Page.png" alt="project-screenshot" width="800" height="1200/">
+<img src="https://i.ibb.co/S3Tstzm/Register-Page.png" alt="project-screenshot" width="1200" height="800/">
 
-<img src="https://i.ibb.co/j3fG4rf/Login-Page.png" alt="project-screenshot" width="800" height="1200/">
+<img src="https://i.ibb.co/j3fG4rf/Login-Page.png" alt="project-screenshot" width="1200" height="800/">
 
-<img src="https://i.ibb.co/D7DsVkB/Payment-Page.png" alt="project-screenshot" width="800" height="1200/">
+<img src="https://i.ibb.co/D7DsVkB/Payment-Page.png" alt="project-screenshot" width="1200" height="800/">
 
-<img src="https://i.ibb.co/CntyVdC/Trip-Details-Page.png" alt="project-screenshot" width="800" height="1200/">
+<img src="https://i.ibb.co/CntyVdC/Trip-Details-Page.png" alt="project-screenshot" width="1200" height="800/">
 
-<img src="https://i.ibb.co/JtgK1q5/Inquiry-Page.png" alt="project-screenshot" width="800" height="1200/">
+<img src="https://i.ibb.co/JtgK1q5/Inquiry-Page.png" alt="project-screenshot" width="1200" height="800/">
 
-<img src="https://i.ibb.co/KLjRQZN/Homepage.png" alt="project-screenshot" width="800" height="1200/">
+<img src="https://i.ibb.co/KLjRQZN/Homepage.png" alt="project-screenshot" width="1200" height="800/">
 
 <h2>🧐 Features</h2>
 
