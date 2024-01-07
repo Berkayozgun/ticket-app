@@ -1,102 +1,87 @@
-# Bustify
+<h1 align="center" id="title">Bustify</h1>
 
-Bustify, online bilet satın alma uygulamasıdır.
+<p align="center"><img src="https://socialify.git.ci/Berkayozgun/ticket-app/image?language=1&amp;owner=1&amp;name=1&amp;stargazers=1&amp;theme=Light" alt="project-image"></p>
 
-İçindekiler
+<p id="description">Bu proje kullanıcıların seyahat planlarını yönetmelerine ve seferler arasında rezervasyon yapmalarına imkan sağlayan bir web uygulamasıdır. Ayrıca kullanıcıların giriş yapmaları kayıt olmaları ödeme yapmaları ve seçtikleri koltukları yönetmeleri gibi temel işlevleri sağlamaktadır.</p>
 
-1. Genel Bilgiler
-2. Kurulum
-3. Çalıştırma
-4. Kullanılan Teknolojiler ve Sürümler
-5. Klasör Yapısı
-6. Ekran Görüntüleri
+<h2>Project Screenshots:</h2>
 
--- Genel Bilgiler --
+<img src="https://i.ibb.co/S3Tstzm/Register-Page.png" alt="project-screenshot" width="800" height="800/">
 
-Bu proje, kullanıcıların seyahat planlarını yönetmelerine ve seferler arasında rezervasyon yapmalarına imkan sağlayan bir web uygulamasıdır. Ayrıca, kullanıcıların giriş yapmaları, kayıt olmaları, ödeme yapmaları ve seçtikleri koltukları yönetmeleri gibi temel işlevleri sağlamaktadır.
+<img src="https://i.ibb.co/j3fG4rf/Login-Page.png" alt="project-screenshot" width="800" height="800/">
 
--- Kurulum --
+<img src="https://i.ibb.co/D7DsVkB/Payment-Page.png" alt="project-screenshot" width="800" height="800/">
 
-Proje, aşağıdaki adımları takip ederek kolayca kurulabilir:
+<img src="https://i.ibb.co/CntyVdC/Trip-Details-Page.png" alt="project-screenshot" width="800" height="800/">
 
-1. Proje dosyalarını bilgisayarınıza indirin veya klonlayın :
+<img src="https://i.ibb.co/JtgK1q5/Inquiry-Page.png" alt="project-screenshot" width="800" height="800/">
 
+<img src="https://i.ibb.co/KLjRQZN/Homepage.png" alt="project-screenshot" width="800" height="800/">
+
+<h2>🧐 Features</h2>
+
+Here're some of the project's best features:
+
+- Login
+- Register
+- Payment
+- Seat Selection
+
+<h2>🛠️ Installation Steps:</h2>
+
+<p>1. Clone the project</p>
+
+```
 git clone https://github.com/username/project-name.git
+```
+
+<p>2. Change your directory</p>
+
+```
 cd project-name
+```
 
-2. Gerekli paketleri yükleyin
+<p>3. Install the dependencies</p>
 
+```
 npm install
+```
 
--- Çalıştırma --
+<p>4. Run the frontend side</p>
 
-Proje kurulumu tamamlandıktan sonra, aşağıdaki adımları izleyerek uygulamayı başlatabilirsiniz:
-
-1. Frontend geliştirme sunucusunu başlatın :
-
+```
 npm run dev
+```
 
-2. Daha sonra aynı dizinde şu komutu çalıştırarak backend servisini çalıştırın :
+<p>5. Run the backend side</p>
 
+```
 node server.js
+```
 
-3. Tarayıcınızda http://localhost:5173 adresine giderek uygulamanın çalışır halini görüntüleyebilirsiniz.
+<p>6. Go to this page on browser</p>
 
--- Kullanılan Teknolojiler ve Sürümler
+```
+http://localhost:5173
+```
 
-Bu projede aşağıdaki teknolojiler ve sürümler kullanılmıştır :
+<h2>💻 Built with</h2>
 
-*Vite v2.5.4
-*React v17.0.2
-*Redux Toolkit v1.6.1
-*Axios v0.21.1
-*Node.js v14.17.5
-*npm v6.14.14
-*Express v4.17.1
-*MongoDB v4.4.6
-*Reduxjs/toolkit v1.6.1
-*brcypt v5.0.1
-*cors v2.8.5
-*react-datepicker v4.2.1
-*react-dom v17.0.2
-*react-router-dom v5.2.0
+Technologies used in the project:
 
--- Klasör Yapısı --
-
-src/
-├───assets/
-├───components/
-│ ├───Header.tsx
-│ ├───Layout.tsx
-│ ├───PageTransition.tsx
-│ ├───SeatSVG.tsx
-├───pages/
-│ ├───HomePage.tsx
-│ ├───InquiryPage.tsx
-│ ├───LoginPage.tsx
-│ ├───PaymentPage.tsx
-│ ├───RegisterPage.tsx
-│ ├───TripDetailsPage.tsx
-├───services/
-│ ├───auth.service.ts
-│ ├───trip.service.ts
-├───slices/
-│ ├───paymentSlice.ts
-├───tripSlice.ts
-├───userSlice.ts
-├───store/
-│ ├───index.ts
-├───styles/
-│ ├───Header.css
-│ ├───Homepage.css
-│ ├───InquiryPage.css
-│ ├───LoginPage.css
-│ ├───PageTransition.css
-│ ├───PaymentPage.css
-│ ├───RegisterPage.css
-│ ├───TripDetailsPage.css
-├───App.tsx
-
--- Ekran Görüntüleri --
-
-Projenin ekran görüntülerine buradan ulaşabilirsiniz.
+- Vite
+- React
+- Redux Toolkit
+- Axios
+- Node.js
+- npm
+- Express
+- MongoDB
+- brcypt
+- cors
+- react-datepicker
+- react-dom
+- react-router-dom
+- CSS
+- HTML
+- Javascript
