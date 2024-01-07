@@ -1,0 +1,167 @@
+/* General styling for the main container */
+.seating-plan {
+  display: flex;
+  justify-content: center;
+  gap: 100px; /* Adjust the gap between columns as needed */
+}
+
+/* Styling for seat containers */
+.seat-container1,
+.seat-container2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; /* Adjust the gap between seats as needed */
+}
+
+.trip-details-container {
+  text-align: center;
+  margin: 20px;
+  background-color: #f0f0f0;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tripdetails-header {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 20px;
+}
+.dep-des {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Styling for the seating plan */
+
+/* Styling for individual seats */
+.seat {
+  width: 60px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+  border: 2px solid #d8d8d8;
+  border-radius: 5px;
+  cursor: pointer;
+  background: url("../assets/seat.svg");
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Styling for selected seats based on gender */
+.male-selected.seat.occupied {
+  background-color: #5c6aff;
+  color: white;
+}
+
+.female-selected.seat.occupied {
+  background-color: #ff69b5;
+  color: white;
+}
+
+/* Styling for female chips */
+.female {
+  background-color: #ff69b4;
+  color: white;
+}
+.male {
+  background-color: #5c6aff;
+  color: white;
+}
+
+/* Styling for unoccupied seats */
+.seat:not(.occupied) {
+  background-color: #d8d8d8; /* Change this to the desired color for unoccupied seats */
+  color: #000; /* Change this to the desired text color for unoccupied seats */
+}
+
+/* Styling for selected seats */
+.selected.seat:not(.occupied) {
+  background-color: #5c6aff; /* Change this to the desired color for selected seats */
+  color: #fff; /* Change this to the desired text color for selected seats */
+}
+
+/* Styling for occupied seats */
+.seat.occupied {
+  background-color: #d8d8d8; /* Change this to the desired color for occupied seats */
+  color: #000; /* Change this to the desired text color for occupied seats */
+}
+
+/* Styling for selected seats container */
+.selected-seats {
+  margin-top: 20px;
+}
+
+/* Styling for passenger chips */
+.chip {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+/* Styling for total price container */
+.total-price {
+  margin-top: 20px;
+}
+/* Styling for selected seats based on gender */
+.selected.seat:not(.occupied).female {
+  background-color: #ff69b4; /* Pink color for female */
+  color: white;
+}
+
+.selected.seat:not(.occupied).male {
+  background-color: #5c6aff; /* Blue color for male */
+  color: white;
+}
+
+.goPaymentButton {
+  width: 10%;
+  height: 50px;
+  background-color: #62f462;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.goBack {
+  width: 10%;
+  height: 50px;
+  background-color: #ff3333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 0 10px;
+  /* Add margin-right to separate from the Go Payment button */
+}
+.goBackText {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.goBack:hover {
+  background-color: #ff4d4d;
+}
+.goPaymentButton:hover {
+  background-color: #62f462;
+}

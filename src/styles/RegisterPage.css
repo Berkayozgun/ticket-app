@@ -1,0 +1,160 @@
+/* src/styles/RegisterPage.css */
+
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+.register-container {
+  max-width: 800px;
+  margin: 2vh auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  text-align: center;
+  height: auto;
+}
+
+.register-card {
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.label {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #444;
+}
+
+.input.email-input,
+.input.pw-input,
+.input.name-input,
+.input.surname-input,
+.input.tcNo-input {
+  margin: auto;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 40%;
+}
+
+.input.email-input:focus,
+.input.pw-input:focus,
+.input.name-input:focus,
+.input.surname-input:focus,
+.input.tcNo-input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
+
+.input.email-input::placeholder,
+.input.pw-input::placeholder,
+.input.name-input::placeholder,
+.input.surname-input::placeholder,
+.input.tcNo-input::placeholder {
+  color: #999999;
+}
+
+.select.gender-select {
+  width: 40%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.select.gender-select:focus {
+  outline: none;
+  border-color: #2196f3;
+}
+
+.select.gender-select .option {
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background: #fff;
+  color: #444;
+}
+
+.input.datepicker {
+  width: 100%;
+}
+
+.register-button,
+.cancel-button {
+  cursor: pointer;
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 48%;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+  gap: 10px;
+}
+
+.register-button {
+  background: #4caf50;
+  color: #fff;
+}
+
+.register-button:hover {
+  background: #45a049;
+}
+
+.cancel-button {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.cancel-button:hover {
+  background: #c0392b;
+}
+/* src/styles/RegisterPage.css */
+
+.register-container {
+  /* Diğer stiller burada... */
+  transform: translateY(0); /* Yeni eklenen stil */
+}
+
+.register-container.page-enter {
+  transform: translateY(100%);
+}
+
+.register-container.page-enter-active {
+  transform: translateY(0);
+}
+
+.register-container.page-exit {
+  transform: translateY(0);
+}
+
+.register-container.page-exit-active {
+  transform: translateY(-100%);
+}

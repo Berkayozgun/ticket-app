@@ -1,0 +1,116 @@
+/* src/styles/PageTransition.css */
+
+.transition-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.page {
+  transition: transform 0.3s ease-in-out;
+}
+
+.page-enter {
+  transform: translateY(100%);
+}
+
+.page-enter-active {
+  transform: translateY(0);
+}
+
+.page-exit {
+  transform: translateY(0);
+}
+
+.page-exit-active {
+  transform: translateY(-100%);
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(240, 240, 240, 0.9);
+  z-index: 1;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.custom-loader {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-car__body {
+  animation: custom-shake 0.2s ease-in-out infinite alternate;
+}
+
+.custom-car__line {
+  transform-origin: center right;
+  stroke-dasharray: 22;
+  animation: custom-line 0.8s ease-in-out infinite;
+  animation-fill-mode: both;
+}
+
+.custom-car__line--top {
+  animation-delay: 0s;
+}
+
+.custom-car__line--middle {
+  animation-delay: 0.2s;
+}
+
+.custom-car__line--bottom {
+  animation-delay: 0.4s;
+}
+
+@keyframes custom-shake {
+  0% {
+    transform: translateY(-1%);
+  }
+  100% {
+    transform: translateY(3%);
+  }
+}
+
+@keyframes custom-line {
+  0% {
+    stroke-dashoffset: 22;
+  }
+  25% {
+    stroke-dashoffset: 22;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  51% {
+    stroke-dashoffset: 0;
+  }
+  80% {
+    stroke-dashoffset: -22;
+  }
+  100% {
+    stroke-dashoffset: -22;
+  }
+}

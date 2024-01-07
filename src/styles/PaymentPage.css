@@ -1,0 +1,92 @@
+/* src/styles/PaymentPage.css */
+
+.payment-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Lato", sans-serif;
+  background-color: #f8f8f8;
+}
+
+.credit-card-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Lato", sans-serif;
+  background-color: #ffffff;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  text-align: left;
+  font-size: 14px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.input.invalid {
+  border-color: #ff4444;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.input::placeholder {
+  color: gray;
+}
+
+.error-message {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #ff4444;
+  font-size: 14px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.input.invalid + .error-message {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+
+.pay-now-button {
+  padding: 12px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.pay-now-button:hover {
+  background-color: #45a049;
+}
+
+.pay-now-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
