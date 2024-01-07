@@ -6,17 +6,17 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://i.ibb.co/S3Tstzm/Register-Page.png" alt="project-screenshot" width="800" height="800/">
+<img src="https://i.ibb.co/S3Tstzm/Register-Page.png" alt="project-screenshot" width="800" height="1200/">
 
-<img src="https://i.ibb.co/j3fG4rf/Login-Page.png" alt="project-screenshot" width="800" height="800/">
+<img src="https://i.ibb.co/j3fG4rf/Login-Page.png" alt="project-screenshot" width="800" height="1200/">
 
-<img src="https://i.ibb.co/D7DsVkB/Payment-Page.png" alt="project-screenshot" width="800" height="800/">
+<img src="https://i.ibb.co/D7DsVkB/Payment-Page.png" alt="project-screenshot" width="800" height="1200/">
 
-<img src="https://i.ibb.co/CntyVdC/Trip-Details-Page.png" alt="project-screenshot" width="800" height="800/">
+<img src="https://i.ibb.co/CntyVdC/Trip-Details-Page.png" alt="project-screenshot" width="800" height="1200/">
 
-<img src="https://i.ibb.co/JtgK1q5/Inquiry-Page.png" alt="project-screenshot" width="800" height="800/">
+<img src="https://i.ibb.co/JtgK1q5/Inquiry-Page.png" alt="project-screenshot" width="800" height="1200/">
 
-<img src="https://i.ibb.co/KLjRQZN/Homepage.png" alt="project-screenshot" width="800" height="800/">
+<img src="https://i.ibb.co/KLjRQZN/Homepage.png" alt="project-screenshot" width="800" height="1200/">
 
 <h2>🧐 Features</h2>
 
@@ -69,19 +69,14 @@ http://localhost:5173
 
 Technologies used in the project:
 
-- Vite
-- React
-- Redux Toolkit
-- Axios
-- Node.js
-- npm
-- Express
-- MongoDB
-- brcypt
-- cors
-- react-datepicker
-- react-dom
-- react-router-dom
-- CSS
-- HTML
-- Javascript
+- "vite": "^5.0.8"
+- "typescript": "^5.2.2"
+- "react-router-dom": "^6.21.1"
+- "react-datepicker": "^4.25.0"
+- "cors": "^2.8.5"
+- "express": "^4.18.2"
+- "axios": "^1.6.4"
+- "mongodb": "^6.3.0"
+- "bcrypt": "^5.1.1"
+- "@reduxjs/toolkit": "^2.0.1"
+- "react": "^18.2.0"
