@@ -15,7 +15,11 @@ const AuthService = {
       });
       return response.data;
     } catch (error) {
-      console.error("Login Failed:", error.message);
+      if (axios.isAxiosError(error)) {
+        console.error("Login Failed:", error.message);
+      } else {
+        console.error("Login Failed:", error);
+      }
       throw new Error("Login failed");
     }
   },
@@ -42,7 +46,11 @@ const AuthService = {
       });
       return response.data;
     } catch (error) {
-      console.error("Registration Failed:", error.message);
+      if (error instanceof Error) {
+        console.error("Registration Failed:", error.message);
+      } else {
+        console.error("Registration Failed:", error);
+      }
       throw new Error("Registration failed");
     }
   },
@@ -59,7 +67,11 @@ const AuthService = {
       console.log("User Email: ", response.data.email);
       return response.data;
     } catch (error) {
-      console.error("Error fetching user:", error.message);
+      if (error instanceof Error) {
+        console.error("Error fetching user:", error.message);
+      } else {
+        console.error("Error fetching user:", error);
+      }
       throw new Error("Get user failed");
     }
   },

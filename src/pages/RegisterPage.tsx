@@ -66,7 +66,11 @@ const RegisterPage: React.FC = () => {
       setError(null);
       navigate("/login");
     } catch (error) {
-      console.error("Registration Failed:", error.message);
+      if (error instanceof Error) {
+        console.error("Registration Failed:", error.message);
+      } else {
+        console.error("Registration Failed:", error);
+      }
       setError("Kayıt başarısız.");
     }
   };

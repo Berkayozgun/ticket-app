@@ -1,15 +1,14 @@
-import { configureStore } from "@reduxjs/toolkit";
-import tripReducer from "../slices/tripSlice";
-import userReducer from "../slices/userSlice";
-import paymentReducer from "../slices/paymentSlice";
+import { configureStore } from '@reduxjs/toolkit';
+import tripReducer from '../slices/tripSlice';
 
 const store = configureStore({
-  // redux store for storing the state of the application
   reducer: {
     trip: tripReducer,
-    user: userReducer,
-    payment: paymentReducer,
   },
 });
+
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
 export default store;

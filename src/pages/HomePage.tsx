@@ -19,14 +19,14 @@ const useFetchData = () => {
         // Check if trips data is available
         if (trips && trips.length > 0) {
           const uniqueDepartures = Array.from(
-            new Set(trips.map((trip) => trip.departure))
+            new Set(trips.map((trip: { departure: string }) => trip.departure))
           );
           const uniqueDestinations = Array.from(
-            new Set(trips.map((trip) => trip.destination))
+            new Set(trips.map((trip: { destination: string }) => trip.destination))
           );
 
-          setDepartures(uniqueDepartures);
-          setDestinations(uniqueDestinations);
+          setDepartures(uniqueDepartures as string[]);
+          setDestinations(uniqueDestinations as string[]);
         }
       } catch (error) {
         console.error(error);

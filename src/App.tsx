@@ -24,12 +24,15 @@ const App: React.FC = () => {
         {/* 2. wrapped the app with the Router component */}
         <Header />
         <Routes>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/" element={<HomePage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/inquiry" element={<InquiryPage />} />
-          <Route path="/trip-details/:tripId" element={<TripDetailsPage />} />
-          <Route path="/payment" element={<PaymentPage />} />
+          <Route path='/login' element={<LoginPage />} />
+          <Route path='/' element={<HomePage />} />
+          <Route path='/register' element={<RegisterPage />} />
+          <Route path='/inquiry' element={<InquiryPage />} />
+          <Route
+            path='/trip-details/:tripId'
+            element={<TripDetailsPage tripId='' />}
+          />
+          <Route path='/payment' element={<PaymentPage />} />
         </Routes>
       </Router>
     </Provider>

@@ -2,9 +2,10 @@ import React, { useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import "../styles/TripDetailsPage.css";
-import { fetchTripById } from "../slices/tripSlice";
+import { fetchTrips } from "../slices/tripSlice"; // Ensure this path is correct
 import SeatSVG from "../components/SeatSVG";
 import Layout from "../components/Layout";
+import { AppDispatch } from "../store"; // Import the AppDispatch type
 
 interface Passenger {
   // Passenger interface
@@ -20,17 +21,33 @@ interface TripDetailsPageParams {
 
 // TripDetailsPage component
 const TripDetailsPage: React.FC<TripDetailsPageParams> = () => {
-  const { tripId } = useParams<TripDetailsPageParams>();
-  const userGender = useSelector((state: any) => state.user.user?.gender);
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const trip = useSelector((state: any) => state.trip.currentTrip);
-  const seatPrice = useSelector((state: any) => state.trip.currentTrip?.price);
-  const currentUserGender = useSelector(
-    (state: any) => state.user.user?.gender
+  const { tripId } = useParams<{ tripId: string }>();
+  const userGender = useSelector(
+    (state: { user: { user?: { gender: "male" | "female" } } }) =>
+      state.user.user?.gender
   );
-
-  const loading = useSelector((state: any) => state.trip.loading);
+  const navigate = useNavigate();
+  const dispatch: AppDispatch = useDispatch(); // Use the correct type for dispatch
+  const trip = useSelector(
+    (state: {
+      trip: {
+        currentTrip: {
+          availableSeats: number;
+          price: number;
+          departure: string;
+          destination: string;
+          date: string;
+        };
+      };
+    }) => state.trip.currentTrip
+  );
+  const seatPrice = useSelector(
+    (state: { trip: { currentTrip: { price: number } } }) =>
+      state.trip.currentTrip?.price
+  );
+  const loading = useSelector(
+    (state: { trip: { loading: boolean } }) => state.trip.loading
+  );
   const [totalSeats, setTotalSeats] = React.useState<number>(0);
   const [selectedSeats, setSelectedSeats] = React.useState<number[]>([]);
   const [passengers, setPassengers] = React.useState<Passenger[]>([]);
@@ -39,21 +56,26 @@ const TripDetailsPage: React.FC<TripDetailsPageParams> = () => {
   >([]);
 
   useEffect(() => {
-    console.log("Current User Gender:", currentUserGender);
-    dispatch(fetchTripById(tripId));
-  }, [dispatch, tripId, currentUserGender]);
+    console.log("Current User Gender:", userGender);
+    dispatch(fetchTrips())
+      .then(() => {
+        console.log("Trips fetched successfully");
+      })
+      .catch((error: unknown) => {
+        console.error("Error fetching trips:", error);
+      });
+  }, [dispatch, tripId, userGender]);
 
   useEffect(() => {
     // Update taken seats randomly when trip changes
     if (trip) {
-      const randomStatus = Array(trip.availableSeats)
-        .fill(null)
-        .map(() => ({
-          isOccupied: Math.random() < 0.5,
-          gender: Math.random() < 0.5 ? "male" : "female",
-        }));
-      // check randomized seats
-      console.log("Randomized Seats:", randomStatus);
+      const randomStatus: { isOccupied: boolean; gender: "male" | "female" }[] =
+        Array(trip.availableSeats)
+          .fill(null)
+          .map(() => ({
+            isOccupied: Math.random() > 0.5,
+            gender: Math.random() > 0.5 ? "male" : "female",
+          }));
       setSeatStatus(randomStatus);
       setTotalSeats(trip.availableSeats);
     }
@@ -84,9 +106,7 @@ const TripDetailsPage: React.FC<TripDetailsPageParams> = () => {
 
         // Update the gender of the seat to default when unselected by user
         const updatedSeatStatus = [...seatStatus];
-        updatedSeatStatus[seatNumber - 1].gender = userGender
-          ? userGender
-          : "default";
+        updatedSeatStatus[seatNumber - 1].gender = userGender;
         setSeatStatus(updatedSeatStatus);
       } else {
         // Check if user has already selected 5 seats or not, if not, add the seat to selectedSeats
@@ -117,7 +137,7 @@ const TripDetailsPage: React.FC<TripDetailsPageParams> = () => {
 
   // Get seat class name
   const getSeatClassName = (seatNumber: number, part: string) => {
-    const { isOccupied, gender } = seatStatus[seatNumber - 1];
+    const { isOccupied } = seatStatus[seatNumber - 1];
     const isSelected = selectedSeats.includes(seatNumber);
     const selectedClass = isSelected ? "selected" : "";
 
@@ -141,8 +161,8 @@ const TripDetailsPage: React.FC<TripDetailsPageParams> = () => {
 
     seats.push(
       // push seats to seats array
-      <div className="seating-plan" key="seating-plan">
-        <div className="seat-container1">
+      <div className='seating-plan' key='seating-plan'>
+        <div className='seat-container1'>
           {Array.from({ length: itemsPerRow }, (_, index) => {
             const seatNumber = index + 1;
             const seatClassName = getSeatClassName(seatNumber, "first-part");
@@ -162,14 +182,14 @@ const TripDetailsPage: React.FC<TripDetailsPageParams> = () => {
                 className={seatClass}
                 onClick={() => handleSeatClick(seatNumber)}
               >
-                <SeatSVG className="seat" /> {/* seat svg */}
+                <SeatSVG className='seat' /> {/* seat svg */}
                 {seatNumber}
               </div>
             );
           })}
         </div>
 
-        <div className="seat-container2">
+        <div className='seat-container2'>
           {Array.from({ length: limit - itemsPerRow }, (_, index) => {
             const seatNumber = itemsPerRow + index + 1;
             const seatClassName = getSeatClassName(seatNumber, "second-part");
@@ -189,7 +209,7 @@ const TripDetailsPage: React.FC<TripDetailsPageParams> = () => {
                 className={seatClass}
                 onClick={() => handleSeatClick(seatNumber)}
               >
-                <SeatSVG className="seat" />
+                <SeatSVG className='seat' />
                 {seatNumber}
               </div>
             );
@@ -208,12 +228,12 @@ const TripDetailsPage: React.FC<TripDetailsPageParams> = () => {
 
   return (
     <Layout>
-      <div className="trip-details-container">
+      <div className='trip-details-container'>
         {loading && <p>Loading...</p>}
         {!loading && trip && (
           <>
-            <h2 className="tripdetails-header">Sefer Detayları</h2>
-            <p className="dep-des">
+            <h2 className='tripdetails-header'>Sefer Detayları</h2>
+            <p className='dep-des'>
               {trip.departure} &#8594; {trip.destination}
             </p>
             <p>
@@ -222,8 +242,8 @@ const TripDetailsPage: React.FC<TripDetailsPageParams> = () => {
               {trip.price} TL
             </p>
 
-            <div className="seating-plan">{renderSeats()}</div>
-            <div className="selected-seats">
+            <div className='seating-plan'>{renderSeats()}</div>
+            <div className='selected-seats'>
               <h3>Seçilen Koltuklar</h3>
               <ul>
                 {passengers.map((passenger) => (
@@ -239,20 +259,20 @@ const TripDetailsPage: React.FC<TripDetailsPageParams> = () => {
                 ))}
               </ul>
             </div>
-            <div className="total-price">
+            <div className='total-price'>
               <h3>Toplam Fiyat: {calculateTotalPrice()} TL</h3>
             </div>
 
-            <div className="goBack">
+            <div className='goBack'>
               {" "}
               {/* go back button */}
-              <Link className="goBackText" to="/inquiry">
+              <Link className='goBackText' to='/inquiry'>
                 Geri Dön
               </Link>
             </div>
 
             {/* payment button */}
-            <button className="goPaymentButton" onClick={handlePaymentRedirect}>
+            <button className='goPaymentButton' onClick={handlePaymentRedirect}>
               Ödemeye Git
             </button>
           </>
