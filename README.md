@@ -1,8 +1,8 @@
-<h1 align="center" id="title">Bustify</h1>
+<vh1 align="center" id="title">Bustify</h1>
 
 <p align="center"><img src="https://socialify.git.ci/Berkayozgun/ticket-app/image?language=1&amp;owner=1&amp;name=1&amp;stargazers=1&amp;theme=Light" alt="project-image"></p>
 
-<p id="description">Bu proje kullanıcıların seyahat planlarını yönetmelerine ve seferler arasında rezervasyon yapmalarına imkan sağlayan bir web uygulamasıdır. Ayrıca kullanıcıların giriş yapmaları kayıt olmaları ödeme yapmaları ve seçtikleri koltukları yönetmeleri gibi temel işlevleri sağlamaktadır.</p>
+<p id="description">This project is a web application that allows users to manage their travel plans and make reservations among trips. It also provides basic functionalities such as user login, registration, payment, and seat management.</p>
 
 <h2>Project Screenshots:</h2>
 
@@ -20,7 +20,7 @@
 
 <h2>🧐 Features</h2>
 
-Here're some of the project's best features:
+Here are some of the project's best features:
 
 - Login
 - Register
@@ -31,7 +31,7 @@ Here're some of the project's best features:
 
 <p>1. Clone the project</p>
 
-```
+```sh
 git clone https://github.com/username/project-name.git
 ```
 
